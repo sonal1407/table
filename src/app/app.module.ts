@@ -4,13 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { OrderModule } from './order/order.module';
-import { StatusDirective } from './status.directive';
+// import { StatusDirective } from './table/status.directive';
 import { TableModule } from './table/table.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatusDirective
+    // StatusDirective
   ],
   imports: [
     BrowserModule,

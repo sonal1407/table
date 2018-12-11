@@ -8,14 +8,20 @@
           </tr>
         <tbody _ngcontent-c4="">
           <tr *ngFor="let data of dataList">
-            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)">
-              {{data[data1]}}
+            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)" *ngIf="header.key =='status'">
+                {{data[data1]}}
             </td>
+            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)" *ngIf="header.key !='status'" appStatus [status]="data[data1.key]">
+               {{data[data1]}}
+              </td>
+             
             <td *ngIf="action">
               <button (click)="actionClick(action.EDIT,data.id)">EDIT</button>
               <button (click)="actionClick(action.DELETE,data.id)">DELETE</button>
             </td>
+          </tr>
         </tbody>
+
       </table>
     </div>
   </div>

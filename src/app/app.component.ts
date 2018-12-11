@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
   action(data, data1) {
+    debugger
     console.log('from app', data, data1);
     // console.log(this.edit);
   }

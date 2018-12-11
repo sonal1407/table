@@ -9,16 +9,20 @@ enum statusChange {
 @Directive({
   selector: '[appStatus]'
 })
-export class StatusDirective {
-
-  constructor(private el: ElementRef) { }
+export class StatusDirective  {
+//declare variable
   _status: statusChange;
-
+  //get the status 
   get status() {
+    debugger
     return this._status;
   }
+  constructor(private el: ElementRef) { }
+  // set value according to the status
   @Input() set status(value) {
+    debugger
     this._status = value;
+  debugger
     if (value === statusChange.Draft) {
       console.log('DRAFT');
       this.el.nativeElement.style.backgroundColor = 'grey';
@@ -26,7 +30,7 @@ export class StatusDirective {
     } else if (value === statusChange.Sent) {
       console.log('SENT');
       this.el.nativeElement.style.backgroundColor = 'blue';
-            this.el.nativeElement.style.color = 'blue';
+      this.el.nativeElement.style.color = 'blue';
     } else if (value == statusChange.Expired) {
       console.log('EXPIRED');
       this.el.nativeElement.style.backgroundColor = 'red';
@@ -40,4 +44,5 @@ export class StatusDirective {
       this.el.nativeElement.style.color = 'blue';
     }
   }
+
 }
