@@ -1,26 +1,27 @@
+<table class="table table-striped table-sm" border="1px solid">
+  <thead>
+    <tr>
+      <th *ngFor="let head of header.name">{{head}}</th>
+    </tr>
+  <tbody>
+    <tr *ngFor="let data of dataList">
+      <ng-container *ngFor="let data1 of header.key">
+        <td *ngIf="header.key !='status'" [status]="data[data1]" appStatus (click)="actionClick(action.VIEW,data.id)">
+          
+          {{data[data1]}}
 
-      <table class="table table-striped table-sm" border="1px solid">
-        <thead>
-          <tr>
-            <th *ngFor="let head of header.name">{{head}}</th>
-          </tr>
-        <tbody>
-          <tr *ngFor="let data of dataList">
-            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)">
-              <ng-container *ngIf="header.key !='status'"  appStatus [status]="data[data1]">
-                {{data[data1]}}
-              </ng-container>
-            </td>
-            <td *ngIf="action[0]">
-           
-              <button (click)="actionClick(action.EDIT,data.id)">EDIT</button>
-            </td>
-            <td *ngIf="action[1]">
-              
-              <button (click)="actionClick(action.DELETE,data.id)">DELETE</button>
-            </td>
-          </tr>
-        </tbody>
+        </td>
+      </ng-container>
+      <td *ngIf="action[0]">
 
-      </table>
-    
+        <button (click)="actionClick(action.EDIT,data.id)">EDIT</button>
+      </td>
+      <td *ngIf="action[1]">
+
+        <button (click)="actionClick(action.DELETE,data.id)">DELETE</button>
+      </td>
+     
+    </tr>
+  </tbody>
+
+</table>

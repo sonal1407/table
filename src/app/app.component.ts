@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
       'email': 'moorehahn@exospace.com',
       'mobile_number': 9095043552,
       'address': '311 Preston Court, Grill, Oklahoma, 476',
-      'status': 'Invoiced '
+      'status': 'Invoiced'
     },
     {
       'id': 12,
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
       'email': 'moorehahn@exospace.com',
       'mobile_number': 9095043552,
       'address': '311 Preston Court, Grill, Oklahoma, 476',
-      'status': 'Paid'
+      'status': 'Expired'
     }
   ];
   constructor() { }

@@ -5,32 +5,41 @@ import { Directive, ElementRef, Input, HostBinding, HostListener } from '@angula
 })
 export class StatusDirective {
   // declare variable
-  @HostBinding('style.color') color: string;
+  // @HostBinding('style.color') color: string;
+
   constructor(private el: ElementRef) {
+    // el.nativeElement.style.backgroundColor = 'green';
 
   }
 
   @Input() set status(value) {
-    const stat = value;
-    if (stat) {
-      if (stat === 'Draft') {
+    const status = value;
+    if (status) {
+      if (status === 'Draft') {
         console.log('draft');
+        this.el.nativeElement.style.backgroundColor = 'grey';
       }
-      if (stat === 'Sent') {
+      if (status === 'Sent') {
         console.log('verify');
+        this.el.nativeElement.style.backgroundColor = 'rgb(33, 197, 243)';
       }
-      if (stat === 'Invoiced') {
+      if (status === 'Invoiced') {
         console.log('invoiced');
+        this.el.nativeElement.style.backgroundColor = 'green';
       }
-      if (stat === 'Paid') {
+      if (status === 'Paid') {
         console.log('Paid');
+        this.el.nativeElement.style.backgroundColor = 'green';
+      }
+      if (status === 'Expired') {
+        this.el.nativeElement.style.backgroundColor = 'red';
       }
     } else {
       console.log('wrong');
 
     }
   }
-  @HostListener('mouseover') onMouseOver() {
-    this.color = 'red';
-  }
+  // @HostListener('mouseover') onMouseOver() {
+  //   this.color = 'red';
+  // }
 }
