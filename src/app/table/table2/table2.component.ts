@@ -19,11 +19,14 @@ export class Table2Component implements OnInit {
 
   /**
    * if user cannot type pass action then it will not display
+   * if user need to  use action then follow a secuance like first edit delete
    */
-  @Input() public action: typeof Action;
-/**
- * store the value of the data
- */
+  @Input() public action: Action[];
+
+  Action: typeof Action;
+  /**
+   * store the value of the data
+   */
   @Input() set data(value) {
     this.dataList = value;
   }
@@ -34,13 +37,9 @@ export class Table2Component implements OnInit {
   get data() {
     return this.dataList;
   }
-  constructor() { }
-  ngOnInit() {
-
-  }
   /**
-   *  * emit an action
-   */
+ *  * emit an action
+ */
   public actionClick(action, id) {
     this.actionClicked.emit({ action, id });
     if (action === 0) {
@@ -51,5 +50,10 @@ export class Table2Component implements OnInit {
       console.log('view click');
 
     }
+  }
+  constructor() {
+  }
+  ngOnInit() {
+    console.log(this.action);
   }
 }

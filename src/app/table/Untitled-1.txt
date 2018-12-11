@@ -1,0 +1,51 @@
+// set background according to the status
+  // @Input() set status(value) {
+  //   this._status = value;
+
+  //   if (value) {
+  //     console.log('value not found');
+  //   } else {
+  //     console.log("value found");
+  //     if (this._status === statusChange.Draft) {
+  //       console.log('DRAFT');
+  //       this.el.nativeElement.style.backgroundColor = 'grey';
+  //       this.el.nativeElement.style.color = 'grey';
+  //     } else if (this._status === statusChange.Sent) {
+  //       console.log('SENT');
+  //       this.el.nativeElement.style.backgroundColor = 'blue';
+  //       this.el.nativeElement.style.color = 'blue';
+  //     } else if (this._status == statusChange.Expired) {
+  //       console.log('EXPIRED');
+  //       this.el.nativeElement.style.backgroundColor = 'red';
+  //       this.el.nativeElement.style.color = 'red';
+  //     } else if (this._status === statusChange.Paid) {
+  //       console.log('Paid');
+  //       this.el.nativeElement.style.backgroundColor = 'green';
+  //       this.el.nativeElement.style.color = 'green';
+  //     } else if (this._status === statusChange.Invoiced) {
+  //       this.el.nativeElement.style.backgroundColor = 'blue';
+  //       this.el.nativeElement.style.color = 'blue';
+  //     }
+  //   }
+
+  // }
+  // //get the status 
+  // get status() {
+  //   // debugger
+  //   return this._status;
+  // }
+
+  <!-- <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)">
+              <ng-container *ngIf="header.key =='status'">
+                {{data[data1]}}
+              </ng-container>
+            </td> -->
+
+
+            // enum statusChange {
+//   Draft = 0,
+//   Sent = 1,
+//   Expired = 2,
+//   Invoiced = 3,
+//   Paid = 4,
+// }

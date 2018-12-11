@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Action } from './table/header.model';
 
 
 @Component({
@@ -8,9 +7,9 @@ import { Action } from './table/header.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  edit = Action;
+  edit = ['EDIT', 'DELETE'];
   heading = {
-    name: ['ID', 'Customer_number', 'email', 'Status', 'action'],
+    name: ['ID', 'Customer_number', 'email', 'Status'],
     key: ['id', 'customer_number', 'email', 'status']
   };
 
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
       'status': 'Draft'
     },
     {
-      'id': 7,
+      'id': 10,
       'customer_number': 'C-10009',
       'name': 'Moore Hahn',
       'company': 'EXOSPACE',
@@ -40,7 +39,7 @@ export class AppComponent implements OnInit {
       'status': 'Sent'
     },
     {
-      'id': 10,
+      'id': 11,
       'customer_number': 'C-10009',
       'name': 'Moore Hahn',
       'company': 'EXOSPACE',
@@ -49,15 +48,26 @@ export class AppComponent implements OnInit {
       'email': 'moorehahn@exospace.com',
       'mobile_number': 9095043552,
       'address': '311 Preston Court, Grill, Oklahoma, 476',
-      'status': 'Sent'
+      'status': 'Invoiced '
+    },
+    {
+      'id': 12,
+      'customer_number': 'C-10009',
+      'name': 'Moore Hahn',
+      'company': 'EXOSPACE',
+      'group': 'Retailer',
+      'created_at': '05-Dec-2018',
+      'email': 'moorehahn@exospace.com',
+      'mobile_number': 9095043552,
+      'address': '311 Preston Court, Grill, Oklahoma, 476',
+      'status': 'Paid'
     }
   ];
-  constructor(private el: ElementRef) { }
+  constructor() { }
   ngOnInit() {
   }
   action(data, data1) {
-    debugger
-    console.log('from app', data, data1);
+    console.log('from app');
     // console.log(this.edit);
   }
 

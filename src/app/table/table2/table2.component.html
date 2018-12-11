@@ -1,28 +1,26 @@
-<div _ngcontent-c4="" class="card border-0">
-  <div _ngcontent-c4="" class="card-body">
-    <div _ngcontent-c4="" class="table-responsive border-bottom">
-      <table _ngcontent-c4="" class="table table-striped table-sm">
-        <thead _ngcontent-c4="">
-          <tr _ngcontent-c4="">
+
+      <table class="table table-striped table-sm" border="1px solid">
+        <thead>
+          <tr>
             <th *ngFor="let head of header.name">{{head}}</th>
           </tr>
-        <tbody _ngcontent-c4="">
+        <tbody>
           <tr *ngFor="let data of dataList">
-            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)" *ngIf="header.key =='status'">
+            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)">
+              <ng-container *ngIf="header.key !='status'"  appStatus [status]="data[data1]">
                 {{data[data1]}}
+              </ng-container>
             </td>
-            <td *ngFor="let data1 of header.key" (click)="actionClick(action.VIEW,data.id)" *ngIf="header.key !='status'" appStatus [status]="data[data1.key]">
-               {{data[data1]}}
-              </td>
-             
-            <td *ngIf="action">
+            <td *ngIf="action[0]">
+           
               <button (click)="actionClick(action.EDIT,data.id)">EDIT</button>
+            </td>
+            <td *ngIf="action[1]">
+              
               <button (click)="actionClick(action.DELETE,data.id)">DELETE</button>
             </td>
           </tr>
         </tbody>
 
       </table>
-    </div>
-  </div>
-</div>
+    
