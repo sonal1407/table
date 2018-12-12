@@ -1,17 +1,19 @@
+/**
+ * @author sonal prajapati
+ * @description This derective represent to update the satus background color 
+ */
 import { Directive, ElementRef, Input, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appStatus]'
 })
 export class StatusDirective {
-  // declare variable
-  // @HostBinding('style.color') color: string;
 
   constructor(private el: ElementRef) {
-    // el.nativeElement.style.backgroundColor = 'green';
-
   }
-
+  /**
+   * Get the status of the data 
+   */
   @Input() set status(value) {
     const status = value;
     if (status) {
@@ -34,12 +36,6 @@ export class StatusDirective {
       if (status === 'Expired') {
         this.el.nativeElement.style.backgroundColor = 'red';
       }
-    } else {
-      console.log('wrong');
-
-    }
-  }
-  // @HostListener('mouseover') onMouseOver() {
-  //   this.color = 'red';
-  // }
+    } 
+}
 }
