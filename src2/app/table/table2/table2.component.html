@@ -1,0 +1,31 @@
+<table class="table table-striped table-sm" border="1px solid">
+  <thead>
+    <!-- for header display -->
+    <tr>
+      <th *ngFor="let head of header.name">{{head}}</th>
+    </tr>
+  <tbody>
+    <!-- for data display -->
+    <tr *ngFor="let data of dataList">
+      <ng-container *ngFor="let key of header.key">
+
+        <td *ngIf="key ==='status'" [status]="data[key]" appStatus>
+          {{data[key]}}
+        </td>
+        <td *ngIf="key !=='status'" (click)="actionClick(action.VIEW,data.id)">
+          {{data[key]}}
+        </td>
+      </ng-container>
+      <!-- if user need actionable table then use -->
+      <ng-container *ngIf='action'>
+
+        <td *ngIf="action[0]">
+          <button (click)="actionClick(action.EDIT,data.id)">EDIT</button>
+        </td>
+        <td *ngIf="action[1]">
+          <button (click)="actionClick(action.DELETE,data.id)">DELETE</button>
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
